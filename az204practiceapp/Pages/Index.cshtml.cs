@@ -18,7 +18,7 @@ namespace az204practiceapp.Pages
             var remoteAddress = this.HttpContext.GetServerVariable("REMOTE_ADDR");
             var msg = $"OnGet remote host {remoteHost} remote address {remoteAddress}";
 
-            System.Diagnostics.Trace.TraceInformation(msg);
+            _logger.LogInformation(msg);
         }
 
         public void OnPost()
@@ -28,15 +28,15 @@ namespace az204practiceapp.Pages
             var remoteAddress = this.HttpContext.GetServerVariable("REMOTE_ADDR");
             var msg = $"OnPost remote host {remoteHost} remote address {remoteAddress}";
 
-            System.Diagnostics.Trace.TraceInformation(msg);
+            _logger.LogInformation(msg);
 
             try
             {
-                throw new NotImplementedException();
+                throw new NotImplementedException("OnPost not implemented yet!");
             }
             catch(Exception ex)
             {
-                System.Diagnostics.Trace.TraceError(ex.Message);
+                _logger.LogError(ex.Message);    
             }
         }
     }
