@@ -36,7 +36,8 @@ namespace az204practiceapp.Pages
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex.Message);    
+                _logger.LogError(ex.Message);
+                throw new NotImplementedException("OnPost not implemented yet!");
             }
         }
     }
